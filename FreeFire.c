@@ -80,6 +80,40 @@ void buscarItem() {
 }
 
 int main() {
+    int opcao;
+    do {
+        printf("Menu:\n");
+        printf("1. Adicionar item\n");
+        printf("2. Remover item\n");
+        printf("3. Listar itens\n");
+        printf("4. Buscar item por nome\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+        switch (opcao) {
+            case 1:
+                adicionarItem();
+                break;
+            case 2:
+                removerItem();
+                break;
+            case 3:
+                listarItens();
+                break;
+            case 4:
+                buscarItem();
+                break;
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (opcao != 0);
+    
+        return 0;
+}
+
     // Menu principal com opções:
     // 1. Adicionar um item
     // 2. Remover um item
@@ -91,8 +125,7 @@ int main() {
     // A estrutura switch trata cada opção chamando a função correspondente.
     // A ordenação e busca binária exigem que os dados estejam bem organizados.
 
-    return 0;
-}
+
 
 // Struct Item:
 // Representa um componente com nome, tipo, quantidade e prioridade (1 a 5).
