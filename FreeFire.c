@@ -34,6 +34,23 @@ void adicionarItem() {
     }
 }
 
+void removerItem() {
+    char nome[50];
+    printf("Digite o nome do item a remover: ");
+    scanf("%s", nome);
+    for (int i = 0; i < numItens; i++) {
+        if (strcmp(mochila[i].nome, nome) == 0) {
+            for (int j = i; j < numItens - 1; j++) {
+                mochila[j] = mochila[j + 1];
+            }
+            numItens--;
+            printf("Item removido com sucesso!\n");
+            return;
+        }
+    }
+    printf("Item não encontrado!\n");
+}
+
 int main() {
     // Menu principal com opções:
     // 1. Adicionar um item
