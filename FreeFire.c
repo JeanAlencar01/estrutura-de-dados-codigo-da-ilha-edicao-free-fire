@@ -51,6 +51,14 @@ void removerItem() {
     printf("Item não encontrado!\n");
 }
 
+void listarItens() {
+    printf("Itens na mochila:\n");
+    printf("Nome\tTipo\tQuantidade\n");
+    for (int i = 0; i < numItens; i++) {
+        printf("%s\t%s\t%d\n", mochila[i].nome, mochila[i].tipo, mochila[i].quantidade);
+    }
+}
+
 int main() {
     // Menu principal com opções:
     // 1. Adicionar um item
