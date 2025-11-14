@@ -59,6 +59,26 @@ void listarItens() {
     }
 }
 
+void buscarItem() {
+    char nome[50];
+    printf("Digite o nome do item a buscar: ");
+    scanf("%s", nome);
+    int encontrado = 0;
+    for (int i = 0; i < numItens; i++) {
+        if (strcmp(mochila[i].nome, nome) == 0) {
+            printf("Item encontrado!\n");
+            printf("Nome: %s\n", mochila[i].nome);
+            printf("Tipo: %s\n", mochila[i].tipo);
+            printf("Quantidade: %d\n", mochila[i].quantidade);
+            encontrado = 1;
+            break;
+        }
+    }
+    if (!encontrado) {
+        printf("Item não encontrado!\n");
+    }
+}
+
 int main() {
     // Menu principal com opções:
     // 1. Adicionar um item
